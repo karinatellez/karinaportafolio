@@ -1,0 +1,48 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.primero{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.segundo{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.tercero{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.cuarto{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.quinto{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.sexto{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.septimo{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.octavo{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.noveno{
+    background-color: blueviolet;
+    border: #c6c6c6 solid 1px;
+}
+.conteiner{
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
