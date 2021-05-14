@@ -1,0 +1,117 @@
+*{
+margin: 0px;
+padding: 0px;
+box-sizing: border-box;
+}
+.fondo{
+    width: 100%;
+    
+}
+.headerperfil{
+display:flex;
+border: solid 0.5px #c5c5c5;
+padding-top:30px;
+padding-left: 30px;
+padding-bottom: 30px;
+margin-top: 50px;
+margin-left: 10px;
+margin-right: 20px;
+}
+.ladoizquierdo{
+    padding-top: 60px;
+    padding-left: 40px;
+    width: 60%;
+    
+}
+.ladoderecho{
+    width: 40%;
+    padding-top: 60px;
+    padding-left: 40px;
+    padding-right: 50px;
+    margin:10px;
+}
+.mainperfil{
+    display: flex;
+    border-right: solid 0.5px #c5c5c5;
+    border-left:solid.5px #c5c5c5 ;
+    margin-left: 10px;
+    margin-right: 20px;
+}
+.ladoderecho li{
+    list-style-type:none;
+    display: flex;
+}
+.ladoderecho li b{
+text-align: left;
+width: 40%;
+font-size:20px;
+}
+.ladoderecho li span{
+    text-align:right;
+    width: 60%;
+    font-size: 20px;
+    word-wrap: break-word;
+}
+.primerboton{
+    background: rgb(1, 161, 253);
+    border-radius:20px;
+    border:#c5c5c5 0.5px solid ;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffffff;
+    width: 150px;
+    height: 40px;
+}
+.primerboton:hover{
+    background: rgb(38, 87, 235);
+}
+.segundoboton{
+    background:rgb(1, 161, 253) ;
+    border-radius: 20px;
+    border: #c5c5c5 0.5px solid;
+    font-size: 20px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #ffffff;
+    width: 150px;
+    height: 40px;
+    margin-left: 20px;
+}
+.segundoboton:hover{
+    background:rgb(38, 87, 235) ;
+}
+h1 {
+padding-left: 20px;
+padding-top: 20px;
+}
+.hacer h2{
+    text-align: center;
+    padding-top: 100px;
+}
+.iconos{
+    text-align: center;
+    padding-top:50px;
+
+}
+.iconos i{
+    margin: 50px;
+    padding: 40px;
+}
+.iconos i:hover{
+border-radius: 60px;
+border: solid rgb(1, 161, 253) 0.5px;
+}
+.hacer{
+    margin-left: 10px;
+    margin-right: 20px;
+    border-left: solid #c5c5c5 0.5px;
+    border-right:solid #c5c5c5 0.5px;
+}
+.fa-robot{
+  color:rgb(1, 161, 253) ;
+}
+.fa-desktop{
+    color: rgb(1, 161, 253);
+}
+.fa-images{
+    color: rgb(1, 161, 253);
+}

@@ -1,0 +1,41 @@
+.cubito{
+    width: 100px;
+    height: 100px;
+    background-color: cornflowerblue;
+    animation-name: micubito;
+    animation-duration: 10s;
+    animation-iteration-count:infinite;
+    position:relative;
+}
+@keyframes micubito{
+    0%{left: 500px; top: 0px;background-color: lightslategray;}
+    16%{left:500px; top: 500px;background-color: cadetblue;}
+    32%{left:0px; top: 500px; background-color: lightskyblue;}
+    48%{left: 500px;top: 0px; background-color: orchid;}
+    64%{left: 0px;top: 0px;background-color: pink;}
+    80%{left: 0px;top: 500px;background-color: rosybrown;}
+    96%{left: 250px;top: 250px;background-color: blue;}
+}
+.cubito2{
+    width: 50px;
+    height: 50px;
+    background-color: rgb(45, 90, 1);
+    animation-name:misegundocubito;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    position: relative;
+}
+
+@keyframes misegundocubito{
+    0%{left: 0px;top: 0px;background-color: rgb(66, 131, 1);}
+    10%{left: 200px;top: 0px;background-color: rgb(87, 173, 1);}
+    20%{left: 0px;top: 100px; background-color: rgb(94, 185, 3);}
+    30%{left: 200px;top: 100px;background-color: rgb(110, 214, 6);}
+    40%{left:0px;top:200px;background-color: lawngreen;}
+    50%{left:200px;top:200px;background-color: rgb(144, 247, 40);}
+    60%{left:0px; top:300px; background-color: rgb(166, 252, 80);}
+    70%{left:200px;top:300px;background-color:rgb(190, 253, 127);}
+    80%{left:200px;top:0px;background-color:rgb(211, 248, 174)}
+    90%{left:0px;top: 0px;background-color: rgb(226, 253, 198);}
+    100%{left:0px;top: 300px;background-color: rgb(250, 252, 248);}
+}
