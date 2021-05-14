@@ -4,31 +4,53 @@
     box-sizing: border-box;
 }
 .contenedor{
-    border: 10px solid #c6c6c6;
+    border: 0.5px solid #c6c6c6;
     display: grid;
     grid-template-areas:'header header header header header'
     'menu main main right right'
     'menu footer footer footer footer';
-    text-align: center;
-    font-size: 20px;
 }
+    
 header{
     grid-area: header;
-    border:10px solid #c6c6c6; ;
+    border:0.5px solid #c6c6c6;
 }
 main{
     grid-area: main;
-    border: 10px solid #c6c6c6;
+    border:0.5px solid #c6c6c6;
 }
 menu{
     grid-area: menu;
-    border: 10px solid #c6c6c6;
+    border: 0.5px solid #c6c6c6;
 }
 footer{
     grid-area: footer;
-    border: 10px solid #c6c6c6;
+    border: 0.5px solid #c6c6c6;
 }
 .right{
     grid-area: right;
-    border: 10px solid #c6c6c6;
+    border: 0.5px solid #c6c6c6;
+}
+.fa-clipboard-list{
+    color: rgb(0, 174, 255);
+    text-align: center;
+    padding-top: 35px;
+}
+h1{
+    font-size: 41px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 30px;
+    margin-left: 30px;
+}
+h2{
+    font-weight: 100;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 24px;
+    padding-bottom: 30px;
+    margin-left: 30px;
+}
+
+.cabecera{
+    display:flex;
 }
