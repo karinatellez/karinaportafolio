@@ -1,0 +1,40 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.texto{
+text-shadow: 0 0  3px #69f14e, 0 0  6px #f14e4e;
+}
+.camisas{
+    color:rgb(250, 250, 250);
+    text-shadow: 2px 2px #000000, 0 0 25px #22beee, 0 0 5px rgb(1, 47, 87);
+    font-size: 50px;
+}
+.cajita{
+    background-color: black;
+    width: 200px;
+    height:200px ;
+    border:#22beee solid 3px ;
+    box-shadow: 6px 6px #69f14e, 6px 6px 25px #69f14e;
+}
+.boton{
+    letter-spacing: -2px;
+    word-spacing: 10px;
+}
+#parrafo1{
+    direction: rtl;
+    unicode-bidi: bidi-override;
+}
+.tooltip{
+    font-size: 20px;
+}
+.tooltip:hover .tooltiptext{
+    visibility: visible;
+}
+.tooltiptext{
+    visibility: hidden;
+    width: 150px;
+    background-color: #000000;
+    color: bisque;
+}
