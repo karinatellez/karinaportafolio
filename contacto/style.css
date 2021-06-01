@@ -16,6 +16,32 @@ header{
     padding-bottom: 30px;
     display:flex;
     border-bottom: 1px #C6C6C6 solid;
+    padding-left: 30px;
+}
+.titulos{
+    margin-left: 30px;
+}
+.titulos a{
+    text-decoration: none;
+}
+#enlace{
+    padding-left:850px;
+    font-size: 60px;
+    text-decoration: none;
+    color: #c6c6c6;
+    width: 60px;
+}
+
+H1{
+    font-size: 41px;
+    font-weight: 100;
+    font-family: Raleway,Helvetica,Arial,sans-serif;
+}
+h2{
+    font-size: 16px;
+    font-weight: 100;
+    font-family: Raleway,Helvetica,Arial,sans-serif;
+    line-height: 5px;
 }
 .cajita{
     border: 1px solid #dfdfdf ;
@@ -23,6 +49,7 @@ header{
     padding: 20px;
     line-height: 30px;
     margin: 30px;
+    
 }
 #modificar{
     margin-bottom: 16px;
@@ -43,7 +70,53 @@ main{
     background-color: #00b6f9;
     border: 1px solid  #fdfdfd;
     color: #ffffff;
+    margin-left: 400px;
+    margin-top: 30px;
 }
 .boton:hover{
     background-color:#068cd6;
 }
+.iconos ul{
+    display : flex;
+    list-style: none;
+    padding: 0%;
+    margin-top: 30px;
+}
+.iconos li{
+    margin-right: 20px;
+}
+.fa-facebook-square{
+    color: #00b6f9;
+}
+.fa-facebook-square:hover{
+    color:rgb(48, 48, 241);
+}
+.fa-instagram{
+    color: #00b6f9;
+}
+.fa-instagram:hover{
+    color:#068cd6;
+}
+.fa-twitch{
+    color: #00b6f9;;
+}
+.fa-twitch:hover{
+    color: rgb(177, 106, 209);
+}
+.fa-twitter{
+    color: #00b6f9;
+}
+.fa-twitter:hover{
+    color: #068cd6;
+}
+.fa-youtube{
+    color:  #00b6f9;
+}
+.fa-youtube:hover{
+    color: rgb(241, 48, 48);
+}
+.fa-instagram{
+    color:  #00b6f9;
+}
+.fa-instagram:hover{
+    color: rgb(179, 14, 104);}
