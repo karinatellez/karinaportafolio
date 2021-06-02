@@ -28,7 +28,22 @@
           <h1>Contacto</h1>
           <h2>Get in touch with me</h2>
         </div>
-        <a href="../index.html" id="enlace"><span>x</span></a>
+        <a href="../index.html" id="enlace"
+          ><svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="50" height="50" fill="#E5E5E5"/>
+            <g id="Frame 1"class="marco" clip-path="url(#clip0)">
+            <rect width="50" height="50" fill="white"/>
+            <line id="LINE2" x1="0.292893" y1="45.9325" x2="42.7193" y2="3.50609" stroke="#A5E2EF" stroke-width="2"/>
+            <line id="LINE1" x1="1.70711" y1="3.50609" x2="44.1335" y2="45.9325" stroke="#A5E2EF" stroke-width="2"/>
+            </g>
+            <defs>
+            <clipPath id="clip0">
+            <rect width="50" height="50" fill="white"/>
+            </clipPath>
+            </defs>
+            </svg>
+            
+        </a>
       </header>
       <main class="row justify-content-evenly" id="main">
         <div class="col-5" id="mainizquierdo">
@@ -96,6 +111,8 @@
           </div>
         </div>
       </main>
+      <div class="row"><div id="map"></div>
+    </div>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
@@ -112,5 +129,26 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
     -->
+    <script>
+      // Initialize and add the map
+      function initMap() {
+        // The location of Uluru
+        const uluru = { lat: -25.344, lng: 131.036 };
+        // The map, centered at Uluru
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 4,
+          center: uluru,
+        });
+        // The marker, positioned at Uluru
+        const marker = new google.maps.Marker({
+          position: uluru,
+          map: map,
+        });
+      }
+    </script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap&libraries=&v=weekly"
+      async
+    ></script>
   </body>
 </html>
