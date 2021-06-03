@@ -18,17 +18,17 @@ margin-left: 10px;
 margin-right: 20px;
 }
 .ladoizquierdo{
-    padding-top: 60px;
-    padding-left: 40px;
     width: 60%;
-    
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
 }
 .ladoderecho{
     width: 40%;
-    padding-top: 60px;
-    padding-left: 40px;
-    padding-right: 50px;
+    padding: 30px;
     margin:10px;
+    background-color: #fdfdfd;
+    border:solid 1px #dfdfdf;
 }
 .mainperfil{
     display: flex;
@@ -36,10 +36,15 @@ margin-right: 20px;
     border-left:solid.5px #c5c5c5 ;
     margin-left: 10px;
     margin-right: 20px;
+    padding-top:48px ;
 }
 .ladoderecho li{
     list-style-type:none;
     display: flex;
+    padding-bottom: 18px;
+    font-size: 16px;
+    font-weight: 100;
+
 }
 .ladoderecho li b{
 text-align: left;
@@ -85,7 +90,10 @@ padding-top: 20px;
 }
 .hacer h2{
     text-align: center;
-    padding-top: 100px;
+    padding-top: 80px;
+    font-weight: 600;
+    font-size: 30px;
+
 }
 .iconos{
     text-align: center;
@@ -93,7 +101,7 @@ padding-top: 20px;
 
 }
 .iconos i{
-    margin: 50px;
+    margin: 30px;
     padding: 40px;
 }
 .iconos i:hover{
@@ -107,11 +115,61 @@ border: solid rgb(1, 161, 253) 0.5px;
     border-right:solid #c5c5c5 0.5px;
 }
 .fa-robot{
-  color:rgb(1, 161, 253) ;
+    color:rgb(1, 161, 253) ;
 }
 .fa-desktop{
     color: rgb(1, 161, 253);
 }
 .fa-images{
     color: rgb(1, 161, 253);
+}
+h2{
+    font-weight: 100;
+    font-family:'Raleway', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    margin-left: 20px;
+}
+h1{
+    font-size: 40px;
+    font-family:'Raleway', Helvetica, Arial, sans-serif;
+    padding-top:0%;
+}
+#LINE1{
+    stroke:  #00b6f9;
+}
+#LINE2{
+    STROKE:  #00b6f9;
+}
+
+@keyframes rotacion{
+    from{
+        transform:rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    to{
+        transform: rotate(360deg);
+        transform-origin: 50% 50%;
+    }
+}
+.marco:hover{
+    animation: rotacion 1s;
+}
+.lax{
+    margin-right: 900px;
+}
+#titulodemain{
+    font-weight: 600;
+    font-size: 26px;
+    font-family:'Raleway', Helvetica, Arial, sans-serif;
+}
+p{
+    font-size: 16px;
+    font-family:'Raleway', Helvetica, Arial, sans-serif;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    line-height: 24px;
+    font-weight: 100;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 30px;
 }
