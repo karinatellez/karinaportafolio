@@ -1,3 +1,4 @@
+<?php header("Location: principal/index.html"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
