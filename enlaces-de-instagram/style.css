@@ -1,0 +1,108 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    }
+    header{
+    text-align: center;
+    padding: 50px;
+    }
+    
+    body{
+    background-image:url("./foto4.jpg");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    }
+
+    h1{
+    font-size: 45px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+    color:#1d6f91 ;
+    text-shadow:1px 1px#0f1b36;
+    }
+
+    h2{
+    font-size: 16px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#1d6f91;
+    text-shadow:1px 0.5px #0f1b36;
+    }
+    
+    .tabla{
+    display: grid;
+    grid: 1px;
+    grid-template-rows:80px 80px  80px  80px  80px;
+    text-align: center;
+    margin-left: 400px;
+    }
+    .enlaces{
+    color:#1d6f91;
+    font-size: 20px;
+    font-weight: 600;
+    border: solid 1px #76777c;
+    border-radius:800px;
+    width:50%;
+    margin-top: 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    text-shadow:1px 0.5px#0f1b36 ;
+    }
+    .enlaces a{
+    text-decoration: none;
+    color:#1d6f91;
+    }
+    .iconos ul{
+    text-align: center;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+    color:#0f1b36;
+    }
+    .pie{
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 80px; 
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    }
+    .iconos li{
+    margin-right: 40px;
+    }
+    
+    .fa-twitch{
+    color: #1d6f91;
+    }
+    
+    .fa-twitch:hover{
+    color:#a970ff;
+    }
+
+.fa-tiktok{
+    color: #1d6f91;
+    }
+    
+.fa-tiktok:hover{
+    color: rgb(92, 0, 0);
+    }
+
+    .fa-instagram{
+    color: #1d6f91;
+    }
+
+    .fa-instagram:hover{
+    color: rgb(179, 14, 104);
+    }
+
+    .fa-facebook{
+    color: #1d6f91;
+    }
+
+    .fa-facebook:hover{
+    color:#1877F2;
+    }
+
