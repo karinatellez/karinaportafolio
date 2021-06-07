@@ -36,7 +36,8 @@
     grid: 1px;
     grid-template-rows:80px 80px  80px  80px  80px;
     text-align: center;
-    margin-left: 400px;
+    margin-left:auto;
+    margin-right: auto;
     }
     .enlaces{
     color:#1d6f91;
@@ -45,14 +46,20 @@
     border: solid 1px #76777c;
     border-radius:800px;
     width:50%;
-    margin-top: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
     text-shadow:1px 0.5px#0f1b36 ;
+    justify-self: center;
+    justify-content:center;
+    align-self: center;
+    padding: 2%;
+    margin-bottom: 1%;
     }
     .enlaces a{
     text-decoration: none;
     color:#1d6f91;
+    }
+    
+    .enlaces:hover a{
+        color:#cadee0
     }
     .iconos ul{
     text-align: center;
@@ -62,18 +69,19 @@
     margin-top: 70px;
     color:#0f1b36;
     }
-    .pie{
-    text-align: center;
-    margin-bottom: 30px;
-    margin-top: 80px; 
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 13px;
-    font-weight: 600;
-    }
+    
     .iconos li{
-    margin-right: 40px;
+    margin-right:2%;
     }
     
+    .pie{
+        text-align: center;
+        margin-bottom: 30px;
+        margin-top: 80px; 
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 13px;
+        font-weight: 600;
+        }
     .fa-twitch{
     color: #1d6f91;
     }
