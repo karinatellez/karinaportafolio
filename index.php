@@ -1,4 +1,4 @@
-<?php header("Location: principal/index.html"); ?>
+<?php header("Location: enlaces-de-instagram/index.html"); ?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
