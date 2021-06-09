@@ -12,14 +12,46 @@ header{
 .icono{
     padding-top:60px;
     padding-left:50px;
-    background-color: lavenderblush;
     border-radius: 50px;
-
+    position:relative;
 }
+.imagen{
+    position:absolute;
+    left: 50%;
+    top: 20%;
+}
+
 .titulo{
     display: flex;
     padding-bottom: 30px;
     padding-top: 30px;
+}
+.titulos{
+    margin-left:1%;
+}
+#LINE1{
+    stroke:  #00b6f9;
+}
+#LINE2{
+    STROKE:  #00b6f9;
+}
+
+@keyframes rotacion{
+    from{
+        transform:rotate(0deg);
+        transform-origin: 50% 50%;
+    }
+    to{
+        transform: rotate(360deg);
+        transform-origin: 50% 50%;
+    }
+}
+.marco:hover{
+    animation: rotacion 1s;
+}
+.lax{
+    margin-left: 67%;
+    padding-top: 1.5%;
 }
 .resumen{
     padding-top: 30px;
