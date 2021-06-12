@@ -68,13 +68,8 @@ font-weight: 600;
     padding-left: 50px;
     font-weight: 300;
 }
-main{ 
-    display: flex;
+main{
     border: solid #c5c5c5 1px;
-    margin-left: 18px;
-    margin-right: 18px;
-    padding-top: 48px;
-    padding-bottom: 48px;
 }
 .educacion{
     font-size: 26px;
@@ -88,8 +83,15 @@ main{
 .lista{
     background-color:  #fdfdfd;
     width: 100%;
-    border: solid 1px #dfdfdf;;
+    border: solid 1px #dfdfdf;
 }
 .lista ul{
     list-style: none;
+}
+.referencialaboral{
+    border: solid 1px #dfdfdf ;
+    background-color:  #fdfdfd;
+}
+.referencialaboral ul{
+    list-style:none;
 }
