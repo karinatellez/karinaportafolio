@@ -22,16 +22,17 @@
     <script type="application/javascript" src="rpie.js"></script>
   </head>
   <body>
-    <header>
+    <header class="container">
+      <div class="row">
       <div class="titulo">
-        <div class="icono">
+        <div class="icono col-xs-2 col-sm-2 col-md-1 col-lg-1 col-xl-1">
           <img src="./imagen.png" class="imagen" alt="" />
         </div>
-        <div class="titulos">
+        <div class="titulos col-xs-8 col-sm-8 col-md-10 col-lg-10 col-xl-10 ">
           <h1 class="resumen">Resumen</h1>
           <h2 class="subtitulo">Cualidades Academicas</h2>
         </div>
-        <div class="lax">
+        <div class="lax col-xs-2 col-sm-2 col-md-1 col-lg-1 col-xl-1">
           <a href="../principal/index.html" id="enlace"
             ><svg
               width="50"
@@ -70,47 +71,155 @@
             </svg>
           </a>
         </div>
-      </div>
+      </div></div>
     </header>
     <main class="container">
       <div class="row justify-content-center align-self-center">
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
           <div class="educacion">Educación</div>
-          <div class="lista">
-            <ul>
-              <li><b>nombre</b><span>Juan del corral</span></li>
-              <li><b>dirección</b><span>Bogotá</span></li>
-              <li><b>período</b><span>Primaria</span></li>
-              <li><b>nivel</b><span>Quinto</span></li>
-            </ul>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione
-              optio doloribus temporibus, nisi nihil expedita architecto
-              sapiente, doloremque suscipit similique libero. Beatae eos
-              nesciunt odio commodi accusantium consequuntur. Ex, soluta?
-            </p>
+          <div id="carouselExampleFade" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="lista">
+                  <ul>
+                    <li><b>nombre</b><span>Juan del corral</span></li>
+                    <li><b>dirección</b><span>Bogotá</span></li>
+                    <li><b>período</b><span>Primaria</span></li>
+                    <li><b>nivel</b><span>Quinto</span></li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione
+                    optio doloribus temporibus, nisi nihil expedita architecto
+                    sapiente, doloremque suscipit similique libero. Beatae eos
+                    nesciunt odio commodi accusantium consequuntur. Ex, soluta?
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="lista">
+                  <ul>
+                    <li><b>nombre</b><span>Juan del corral22</span></li>
+                    <li><b>dirección</b><span>Bogotá</span></li>
+                    <li><b>período</b><span>Primaria</span></li>
+                    <li><b>nivel</b><span>Quinto</span></li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione
+                    optio doloribus temporibus, nisi nihil expedita architecto
+                    sapiente, doloremque suscipit similique libero. Beatae eos
+                    nesciunt odio commodi accusantium consequuntur. Ex, soluta?
+                  </p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="lista">
+                  <ul>
+                    <li><b>nombre</b><span>Juan del corral</span></li>
+                    <li><b>dirección</b><span>Bogotá</span></li>
+                    <li><b>período</b><span>Primaria</span></li>
+                    <li><b>nivel</b><span>Quinto</span></li>
+                  </ul>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione
+                    optio doloribus temporibus, nisi nihil expedita architecto
+                    sapiente, doloremque suscipit similique libero. Beatae eos
+                    nesciunt odio commodi accusantium consequuntur. Ex, soluta?
+                  </p>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
           <h3>referencia laboral</h3>
-          <div class="referencialaboral">
-            <div>
-              <ul>
-                <li><b>nombre compañia</b><span>totto</span></li>
-                <li><b>dirección</b><span>Calle 21 #43a 45,bogotá</span></li>
-                <li><b>período</b><span>Diciembre,2018-Junio,2019</span></li>
-                <li><b>cargo</b><span>Auxiliar contable</span></li>
-              </ul>
+          <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
             </div>
-            <div>
-              <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A
-                ducimus assumenda excepturi et ea in soluta, consectetur
-                inventore tempore voluptas fugit, molestias dolores tenetur
-                consequatur, aperiam natus magni fugiat dolore.
-              </p>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="referencialaboral">
+                  <div>
+                    <ul>
+                      <li><b>nombre compañia</b><span>totto</span></li>
+                      <li><b>dirección</b><span>Calle 21 #43a 45,bogotá</span></li>
+                      <li><b>período</b><span>Diciembre,2018-Junio,2019</span></li>
+                      <li><b>cargo</b><span>Auxiliar contable</span></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                      ducimus assumenda excepturi et ea in soluta, consectetur
+                      inventore tempore voluptas fugit, molestias dolores tenetur
+                      consequatur, aperiam natus magni fugiat dolore.
+                    </p>
+                  </div>
+                </div>
+              
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <div class="referencialaboral">
+                  <div>
+                    <ul>
+                      <li><b>nombre compañia</b><span>totto</span></li>
+                      <li><b>dirección</b><span>Calle 21 #43a 45,bogotá</span></li>
+                      <li><b>período</b><span>Diciembre,2018-Junio,2019</span></li>
+                      <li><b>cargo</b><span>Auxiliar contable</span></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                      ducimus assumenda excepturi et ea in soluta, consectetur
+                      inventore tempore voluptas fugit, molestias dolores tenetur
+                      consequatur, aperiam natus magni fugiat dolore.
+                    </p>
+                  </div>
+                </div>
+                </div>
+              <div class="carousel-item">
+                <div class="referencialaboral">
+                  <div>
+                    <ul>
+                      <li><b>nombre compañia</b><span>totto</span></li>
+                      <li><b>dirección</b><span>Calle 21 #43a 45,bogotá</span></li>
+                      <li><b>período</b><span>Diciembre,2018-Junio,2019</span></li>
+                      <li><b>cargo</b><span>Auxiliar contable</span></li>
+                    </ul>
+                  </div>
+                  <div>
+                    <p>
+                      Lorem ipsum dolor sit amet consectetur adipisicing elit. A
+                      ducimus assumenda excepturi et ea in soluta, consectetur
+                      inventore tempore voluptas fugit, molestias dolores tenetur
+                      consequatur, aperiam natus magni fugiat dolore.
+                    </p>
+                  </div>
+                </div>
+              
+              </div>
             </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleDark" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
           </div>
+
         </div>
       </div>
       <div class="row">
