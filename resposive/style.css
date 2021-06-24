@@ -1,0 +1,25 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+.verde{
+    border: solid #c5c5c5 1px;
+    background-color: rgb(1, 255, 1);
+}
+.rojo{
+    border: solid #c5c5c5 1px;
+    background-color:rgb(182, 5, 5);
+}
+.rosado{
+    border: solid #c5c5c5 1px;
+    background-color:rgb(209, 75, 153) ;
+}
+.piel{
+    border: solid #c5c5c5 1px;
+    background-color: coral;
+}
+.azul{
+    border: solid #c5c5c5 1px;
+    background-color: blue;
+}
