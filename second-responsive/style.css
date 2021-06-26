@@ -1,0 +1,11 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.fondo{
+    background-image: url('./imagen.png');
+    height: 500px;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 0, 0);
+}
