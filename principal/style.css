@@ -4,77 +4,40 @@
     box-sizing: border-box;
 }
 .principal{
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-top: 50px;
-    margin-bottom: 8%;
     border: #C6C6C6 solid 0.5px;
-    width: 94%;
     background-color: rgba(0,0,0,0);
 
 }
 header{
-display: flex;
-flex-wrap: wrap;
-width: 100%;
 border-bottom:#C6C6C6 solid 0.5px;
-height: 130px;
+
 background: rgb(255,215,232);
 background: radial-gradient(circle, rgba(255,215,232,1) 100%, rgba(148,187,233,1) 100%);
 }
-.lateralizquierdo{
-    width: 33.3%;
-    display: flex;
-    
-}
-.lateralizquierdo h1{
-margin-top: 40px;
-margin-left: 20px;
-}
+
 .lateralizquierdo img{
-    width: 20%;
-    margin: 30px;
     border-radius: 50%;
 }
-.medio{
-    width: 33.3%;
 
-}
-.lateralderecho{
-    width: 33.3%;
-
-}
 .lateralderecho li{
     list-style: none;
-    padding: 20px;
 }
 .lateralderecho ul{
     display: flex;
 
 }
 main{
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
     border-bottom:  #C6C6C6 solid 0.5.px;
 
 }
 .lista{
-    width: 50%;
-    padding-left: 60px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
     background-color: black;
     color: #c5c5c5;
-   padding-top: 50px;
-   padding-bottom: 50px;
-
 }
 .lista li{
 list-style: none;
-padding-left: 100px;
-margin-bottom: 30px;
-margin-top: 30px;
 cursor: pointer;
 }
 .lista li:hover{
@@ -83,7 +46,6 @@ cursor: pointer;
 .lista a{
     text-decoration: none;
  color: #c5c5c5;
-    padding: 30px;
 }
 .lista a::before{
     color: #c5c5c5;
@@ -97,14 +59,8 @@ cursor: pointer;
 .fa-grin-alt:hover{
     color: rgba(136, 204, 243, 0.932);
 }
-.foto{
-    width: 50%;
-}
-.foto img{
-    width: 100%;
-}
+
 footer{
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     background: rgb(255,215,232);
@@ -113,9 +69,6 @@ background: radial-gradient(circle, rgba(255,215,232,1) 100%, rgba(148,187,233,1
 footer li{
     list-style: none;
     text-align: center;
-    padding: 10px;
-
-
 }
 footer ul{
     display: flex;
