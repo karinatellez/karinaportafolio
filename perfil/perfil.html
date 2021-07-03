@@ -24,8 +24,8 @@
   </head>
   <body>
     <div class="container-fluid">
-      <header class="headerperfil row">
-        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-1 col-3">
+      <header class="headerperfil row m-1">
+        <div class="col-xl-1 col-lg-1 col-md-2 col-sm-1 col-3 py-2">
           <a href="../principal/index.html"
             ><svg
               xmlns="http://www.w3.org/2000/svg"
@@ -1322,9 +1322,9 @@
         </div>
         <div class="titulo col-xl-8 col-lg-8 col-md-8 colsm-8 col-5">
           <h1>Perfil</h1>
-          <h2>Un poco sobre mí</h2>
+          <h2 class="titulito">Un poco sobre mí</h2>
         </div>
-        <div class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-4">
+        <div class="col-xl-3 col-lg-3 col-md-2 col-sm-2 col-4 text-end py-4">
           <a href="../principal/index.html" id="enlace"
             ><svg
               width="50"
@@ -1364,15 +1364,10 @@
           </a>
         </div>
       </header>
-      <main class="row">
+      <main class="row g-5 my-4">
         <div
-          class="ladoizquierdo
-            
-            col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12
-            my-5
-          "
-        >
-          <div classs="mx-1">
+          class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+          <div class="ladoizquierdo">
             <h2 id="titulodemain p-2 m-5">hola, este es mi diseño web</h2>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum
@@ -1388,24 +1383,25 @@
               blanditiis magni totam aspernatur neque possimus?
             </p>
             <br />
-            <button class="primerboton">contratame</button>
-            <button class="segundoboton">descargar cv</button>
+            <div class="row justify-content-center align-center text-center">
+              <div class="col-6 p-3">
+            <button class="btn btn-primary">contratame</button></div>
+            <div class="col-6 p-3">
+            <button class="btn btn-primary">descargar cv</button>
+          </div>
+          </div>
           </div>
         </div>
-        <div
-          class="
-            ladoderecho
-            col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12
-            my-5
-          "
-        >
-          <ul>
+        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+            <div class="ladoderecho">
+          <ul class="p-5">
             <li><b>Nombre</b><span>Karina tellez</span></li>
             <li><b>Nacimiento</b><span>Septiembre 15, 1997</span></li>
             <li><b>E-mail</b><span>Email@gmail.com</span></li>
             <li><b>Dirección</b><span>Calle falsa #123</span></li>
             <li><b>Telefono</b><span>32xxxxxxxx</span></li>
           </ul>
+        </div>
         </div>
       </main>
       <div class="hacer row">
