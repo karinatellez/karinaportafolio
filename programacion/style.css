@@ -1,0 +1,38 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.rojo{
+    border: solid #c5c5c5 1px;
+    background-color:rgb(180, 12, 46);
+    width:300px;
+    height:200px;
+    position: relative;
+    text-align: center;
+}
+.verde{
+    border: solid #c5c5c5 1px;
+    background-color:forestgreen;
+    width: 250px;
+    height:100px;
+    position: absolute;
+    text-align: center;
+    margin: 20px;
+    margin-top: 40px;
+}
+.cajita{
+    border: solid #c5c5c5 1px;
+    background-color:antiquewhite;
+    width:100px;
+}
+.boton{
+    border: solid #c5c5c5 1px;
+    background-color: dodgerblue;
+    width: 70px;
+    display: flex;
+}
+.titulo{
+    border: solid #c5c5c5 1px;
+    background-color: darkolivegreen;
+}

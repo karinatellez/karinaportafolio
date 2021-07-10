@@ -7,6 +7,7 @@
     border: #C6C6C6 solid 0.5px;
     background-color: rgba(0,0,0,0);
     box-shadow: 0px 0px 50px rgb(0 0 0 / 10%);
+
 }
 header{
 border-bottom:#C6C6C6 solid 0.5px;
@@ -24,11 +25,9 @@ background: radial-gradient(circle, rgba(255,215,232,1) 100%, rgba(148,187,233,1
 }
 .lateralderecho ul{
     display: flex;
-
 }
 main{
     border-bottom:  #C6C6C6 solid 0.5.px;
-
 }
 .lista{
     font-family: Arial, Helvetica, sans-serif;
