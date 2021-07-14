@@ -1,0 +1,10 @@
+var primerNumero=25;
+console.log(primerNumero);
+primerNumero=101101;
+console.log(primerNumero);
+primerNumero=primerNumero-1;
+console.log(primerNumero);
+console.log(primerNumero/128);
+console.log(primerNumero);
+var nombre="karina";
+console.log(nombre);
