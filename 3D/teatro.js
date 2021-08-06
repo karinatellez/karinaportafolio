@@ -1,7 +1,7 @@
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
 const camara = new THREE.PerspectiveCamera(
-  75,
+  90,
   window.innerWidth / window.innerHeight,
   0.1,
   1000
@@ -49,6 +49,8 @@ carpetaEscala.add(objeto.scale,"y",1,4,1);
 carpetaEscala.open();
 var carpetaPosition=gui.addFolder("position");
 carpetaPosition.add(objeto.position,"z",-4,3);
+carpetaPosition.add(objeto.position,"y",-4,3);
+carpetaPosition.add(objeto.position,"x",-4,3);
 carpetaPosition.open();
 
 camara.position.z = 5;
@@ -63,12 +65,48 @@ var carpetaLuz=gui.addFolder("luces");
 carpetaLuz.add(luz.position,"y",-1,5,0.5);
 carpetaLuz.add(luz.position,"x",-5,4,0.1);
 carpetaLuz.add(luz.position,"z",-2,6,1);
+ var carpetaCamara=gui.addFolder("camara");
+ carpetaCamara.add(camara.position,"x",-5,5,1);
+ carpetaCamara.add(camara.position,"y",-5,5,1);
+ carpetaCamara.add(camara.position,"z",-5,5,1);
+ 
+
+
+var materialLineaX= new THREE.LineBasicMaterial( { color: 0xeb4034 } );
+const pointsX = [];
+pointsX.push( new THREE.Vector3( -5, 0, 0 ) );
+pointsX.push( new THREE.Vector3( 0, 0, 0 ) );
+pointsX.push( new THREE.Vector3( 5, 0, 0 ) );
+
+const geometryX = new THREE.BufferGeometry().setFromPoints( pointsX );
+const lineaX = new THREE.Line( geometryX, materialLineaX );
+escena.add( lineaX );
+
+var materialLineaY= new THREE.LineBasicMaterial( { color: 0x37eb34 } );
+const pointsY = [];
+pointsY.push( new THREE.Vector3( 0, 5, 0 ) );
+pointsY.push( new THREE.Vector3( 0, 0, 0 ) );
+pointsY.push( new THREE.Vector3( 0, -5, 0 ) );
+
+const geometryY = new THREE.BufferGeometry().setFromPoints( pointsY );
+const lineaY = new THREE.Line( geometryY, materialLineaY );
+escena.add( lineaY );
+
+var materialLineaZ= new THREE.LineBasicMaterial( { color: 0x34d3eb } );
+const pointsZ = [];
+pointsZ.push( new THREE.Vector3( 0, 0, 5 ) );
+pointsZ.push( new THREE.Vector3( 0, 0, 0 ) );
+pointsZ.push( new THREE.Vector3( 0, 0, -5 ) );
+
+const geometryZ = new THREE.BufferGeometry().setFromPoints( pointsZ );
+const lineaZ = new THREE.Line( geometryZ, materialLineaZ );
+escena.add( lineaZ );
 
 const animate = function () {
   requestAnimationFrame(animate);
 
 /*   objeto.rotation.x += 0.01; */
-  objeto.rotation.y += 0.01;
+/*   objeto.rotation.y += 0.01; */
 
   renderer.render(escena, camara);
 };
