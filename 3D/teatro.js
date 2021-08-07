@@ -1,9 +1,9 @@
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
 const camara = new THREE.PerspectiveCamera(
-  90,
+  50,
   window.innerWidth / window.innerHeight,
-  0.1,
+  1,
   1000
 );
 
@@ -101,6 +101,26 @@ pointsZ.push( new THREE.Vector3( 0, 0, -5 ) );
 const geometryZ = new THREE.BufferGeometry().setFromPoints( pointsZ );
 const lineaZ = new THREE.Line( geometryZ, materialLineaZ );
 escena.add( lineaZ );
+
+var geometriaPiso=new THREE.PlaneGeometry(10,10,1,1);
+var materialPiso=new THREE.MeshBasicMaterial({ color: 0x32a852 });
+var piso=new THREE.Mesh(geometriaPiso, materialPiso );
+escena.add(piso);
+
+piso.rotation.x = Math.PI / 2;
+
+var carpetaPiso=gui.addFolder("piso");
+carpetaPiso.add(piso.position,"y",-5,5,1);
+carpetaPiso.add(piso.position,"x",-5,5,1);
+carpetaPiso.add(piso.position,"z",-5,5,1);
+
+carpetaPiso.add(piso.rotation,"y",-200,200, 1);
+carpetaPiso.add(piso.rotation,"x",-200,200, 1);
+carpetaPiso.add(piso.rotation,"z",-200,200, 1);
+
+
+
+controls = new THREE.OrbitControls( camara, renderer.domElement );
 
 const animate = function () {
   requestAnimationFrame(animate);
