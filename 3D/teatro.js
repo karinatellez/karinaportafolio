@@ -1,11 +1,21 @@
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
-const camara = new THREE.PerspectiveCamera(
-  50,
-  window.innerWidth / window.innerHeight,
-  1,
-  1000
-);
+////////////
+    // CAMERA //
+    ////////////
+
+    // set the view size in pixels (custom or according to window size)
+    // var SCREEN_WIDTH = 400, SCREEN_HEIGHT = 300;
+    var SCREEN_WIDTH = window.innerWidth, SCREEN_HEIGHT = window.innerHeight;
+    // camera attributes
+    var VIEW_ANGLE = 45, ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT, NEAR = 0.1, FAR = 20000;
+    // set up camera
+    camara = new THREE.PerspectiveCamera( VIEW_ANGLE, ASPECT, NEAR, FAR);
+    // the camera defaults to position (0,0,0)
+    //     so pull it back (z = 400) and up (y = 100) and set the angle towards the scene origin
+    camara.position.set(0,150,400);
+    camara.lookAt(escena.position);
+
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -43,9 +53,10 @@ const material = new THREE.MeshBasicMaterial({
 });
 const objeto = new THREE.Mesh(geometria, material);
 escena.add(objeto);
+
 var carpetaEscala=gui.addFolder("escala");
-carpetaEscala.add(objeto.scale,"x",1,3,0.1);
-carpetaEscala.add(objeto.scale,"y",1,4,1);
+carpetaEscala.add(objeto.scale,"x",1,10,0.1);
+carpetaEscala.add(objeto.scale,"y",1,10,1);
 carpetaEscala.open();
 var carpetaPosition=gui.addFolder("position");
 carpetaPosition.add(objeto.position,"z",-4,3);
@@ -102,12 +113,13 @@ const geometryZ = new THREE.BufferGeometry().setFromPoints( pointsZ );
 const lineaZ = new THREE.Line( geometryZ, materialLineaZ );
 escena.add( lineaZ );
 
-var geometriaPiso=new THREE.PlaneGeometry(10,10,1,1);
-var materialPiso=new THREE.MeshBasicMaterial({ color: 0x32a852 });
+var geometriaPiso=new THREE.PlaneGeometry(1000,1000,1,1);
+var materialPiso=new THREE.MeshBasicMaterial({ color: 0xcccac2, side:THREE.DoubleSide });
 var piso=new THREE.Mesh(geometriaPiso, materialPiso );
 escena.add(piso);
 
 piso.rotation.x = Math.PI / 2;
+/* piso.rotation.y= -0.5; */
 
 var carpetaPiso=gui.addFolder("piso");
 carpetaPiso.add(piso.position,"y",-5,5,1);
@@ -118,12 +130,39 @@ carpetaPiso.add(piso.rotation,"y",-200,200, 1);
 carpetaPiso.add(piso.rotation,"x",-200,200, 1);
 carpetaPiso.add(piso.rotation,"z",-200,200, 1);
 
+var geometriaCielo=new THREE.BoxGeometry(10000,10000,10000);
+var materialCielo=new THREE.MeshBasicMaterial({color: 0x9999ff,side:THREE.BackSide})
+var cielo=new THREE.Mesh(geometriaCielo, materialCielo);
+escena.add(cielo);
+
+var geometriaEsfera=new THREE.SphereGeometry( 30, 32, 16 );
+var materialEsfera=new THREE.MeshBasicMaterial( { map: loader.load( "https://freesvg.org/img/LeadGlassBackground.png"  ),
+});
+var esfera=new THREE.Mesh(geometriaEsfera, materialEsfera);
+escena.add(esfera);
+
+esfera.position.x=-40;
+esfera.position.y=58;
+
+var geometriaCajita=new THREE.BoxGeometry(20,20,20);
+var materialCajita=new THREE.MeshBasicMaterial({color: 0xeaff00,side:THREE.BackSide})
+var cajita=new THREE.Mesh(geometriaCajita, materialCajita);
+escena.add(cajita);
+
+cajita.position.x=40;
+cajita.position.y=20;
+
+
 
 
 controls = new THREE.OrbitControls( camara, renderer.domElement );
 
 const animate = function () {
   requestAnimationFrame(animate);
+  cajita.rotation.y+=0.1;
+  esfera.rotation.z+=0.1;
+  esfera.rotation.y+=0.1;
+  esfera.rotation.x+=0.1;
 
 /*   objeto.rotation.x += 0.01; */
 /*   objeto.rotation.y += 0.01; */
