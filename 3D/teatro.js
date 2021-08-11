@@ -166,7 +166,7 @@ const animate = function () {
 
 /*   objeto.rotation.x += 0.01; */
 /*   objeto.rotation.y += 0.01; */
-
+if(camara.position.z>-200){camara.position.z-=1;}
   renderer.render(escena, camara);
 };
 
