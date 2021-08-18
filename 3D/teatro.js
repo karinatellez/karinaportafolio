@@ -171,13 +171,37 @@ function girarObjetosDerecha() {
 function girarObjetosIzquierda() {
   console.log(rotacionObjetos);
   rotacionObjetos = "izquierda";
-  console.log( cajita.rotation.y);
+  console.log(cajita.rotation.y);
 }
-function detenerObjetos(){
-  rotacionObjetos ="detener";
+function detenerObjetos() {
+  rotacionObjetos = "detener";
 }
 
 controls = new THREE.OrbitControls(camara, renderer.domElement);
+
+var cambioTextura = false;
+
+var cambiarColorAzul = true;
+
+function cambiarColor() {
+  cambioTextura = true;
+  console.log("cambio Color");
+  if (cambiarColorAzul == true) {
+    materialCajita = new THREE.MeshBasicMaterial({
+      color: 0x3455eb,
+      side: THREE.BackSide,
+    });
+    
+    cambiarColorAzul = false;
+  } else if (cambiarColorAzul == false) {
+    materialCajita = new THREE.MeshBasicMaterial({
+      color: 0xf00000,
+      side: THREE.BackSide,
+    });
+    cambiarColorAzul = true;
+  }
+
+}
 
 const animate = function () {
   requestAnimationFrame(animate);
@@ -190,7 +214,10 @@ const animate = function () {
     cajita.rotation.y = cajita.rotation.y - 0.1;
     esfera.rotation.y = esfera.rotation.y - 0.1;
   }
-
+  if (cambioTextura == true) {
+    cajita.material = materialCajita;
+    cambioTextura = false;
+  }
 
   /*   objeto.rotation.x += 0.01; */
   /*   objeto.rotation.y += 0.01; */
