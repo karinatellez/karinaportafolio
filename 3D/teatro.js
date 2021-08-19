@@ -185,7 +185,6 @@ var cambiarColorAzul = true;
 
 function cambiarColor() {
   cambioTextura = true;
-  console.log("cambio Color");
   if (cambiarColorAzul == true) {
     materialCajita = new THREE.MeshBasicMaterial({
       color: 0x3455eb,
@@ -202,6 +201,23 @@ function cambiarColor() {
   }
 
 }
+
+var loader=new GLTFLoader();
+loader.load(
+  'mono.gltf',
+  ( gltf ) => {
+      // called when the resource is loaded
+      escena.add( gltf.scene );
+  },
+  ( xhr ) => {
+      // called while loading is progressing
+      console.error( 'An error', error );
+  },
+  ( error ) => {
+      // called when loading has errors
+      console.error( 'An error happened', error );
+  },
+);
 
 const animate = function () {
   requestAnimationFrame(animate);
