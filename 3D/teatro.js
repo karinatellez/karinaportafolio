@@ -1,3 +1,5 @@
+import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.131.3/examples/jsm/loaders/GLTFLoader.js'
+
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
 ////////////
@@ -14,7 +16,7 @@ var VIEW_ANGLE = 45,
   NEAR = 0.1,
   FAR = 20000;
 // set up camera
-camara = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
+var camara = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
 // the camera defaults to position (0,0,0)
 //     so pull it back (z = 400) and up (y = 100) and set the angle towards the scene origin
 camara.position.set(0, 150, 400);
@@ -177,7 +179,7 @@ function detenerObjetos() {
   rotacionObjetos = "detener";
 }
 
-controls = new THREE.OrbitControls(camara, renderer.domElement);
+var controls = new THREE.OrbitControls(camara, renderer.domElement);
 
 var cambioTextura = false;
 
@@ -190,7 +192,7 @@ function cambiarColor() {
       color: 0x3455eb,
       side: THREE.BackSide,
     });
-    
+
     cambiarColorAzul = false;
   } else if (cambiarColorAzul == false) {
     materialCajita = new THREE.MeshBasicMaterial({
@@ -199,24 +201,15 @@ function cambiarColor() {
     });
     cambiarColorAzul = true;
   }
-
 }
 
-var loader=new GLTFLoader();
-loader.load(
-  'mono.gltf',
-  ( gltf ) => {
-      // called when the resource is loaded
-      escena.add( gltf.scene );
-  },
-  ( xhr ) => {
-      // called while loading is progressing
-      console.error( 'An error', error );
-  },
-  ( error ) => {
-      // called when loading has errors
-      console.error( 'An error happened', error );
-  },
+const gltfLoader = new GLTFLoader();
+gltfLoader.load(
+  "https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf",
+  (gltf) => {
+    const root = gltf.scene;
+    escena.add(root);
+  }
 );
 
 const animate = function () {
