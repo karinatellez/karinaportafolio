@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Mono</title>
+        <meta charset="utf-8">
+        <style>
+            body {
+                margin: 0;
+            }
+    
+            .text-center {
+                text-align: center !important;
+            }
+    
+            canvas {
+                display: inline-block;
+            }
+        </style>
+        <link rel="stylesheet" href="/bootstrap-4.5.0/css/bootstrap.min.css">
+
+    </head>
+    <body>
+  
+        <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="/bootstrap-4.5.0/js/bootstrap.min.js"></script>
+    
+
+
+    
+        <script type="module">
+            import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js';
+            import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/controls/OrbitControls.js';
+            import {OBJLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/loaders/OBJLoader.js';
+
+
+
+const scene = new THREE.Scene()
+scene.add(new THREE.AxesHelper(5))
+
+const light = new THREE.PointLight()
+light.position.set(2.5, 7.5, 15)
+scene.add(light)
+
+const camera = new THREE.PerspectiveCamera(
+    75,
+    window.innerWidth / window.innerHeight,
+    0.1,
+    1000
+)
+camera.position.z = 3
+
+const renderer = new THREE.WebGLRenderer()
+renderer.setSize(window.innerWidth, window.innerHeight)
+document.body.appendChild(renderer.domElement)
+
+const controls = new OrbitControls(camera, renderer.domElement)
+controls.enableDamping = true
+
+// const material = new THREE.MeshBasicMaterial({ color: 0x00ff00, wireframe: true })
+
+const objLoader = new OBJLoader()
+objLoader.load(
+    'mono.obj',
+    (object) => {
+        // (object.children[0] as THREE.Mesh).material = material
+        // object.traverse(function (child) {
+        //     if ((child as THREE.Mesh).isMesh) {
+        //         (child as THREE.Mesh).material = material
+        //     }
+        // })
+        scene.add(object)
+    },
+    (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
+
+window.addEventListener('resize', onWindowResize, false)
+function onWindowResize() {
+    camera.aspect = window.innerWidth / window.innerHeight
+    camera.updateProjectionMatrix()
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    render()
+}
+/*
+const stats = Stats()
+document.body.appendChild(stats.dom)
+*/
+function animate() {
+    requestAnimationFrame(animate)
+
+    controls.update()
+
+    render()
+
+    //stats.update()
+}
+
+function render() {
+    renderer.render(scene, camera)
+}
+
+animate()
+
+            
+    
+        </script>
+        
+     
+    
+    
+    
+
+
+    </body>
+</html>
+

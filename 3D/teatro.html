@@ -14,10 +14,18 @@
     <button onclick="girarObjetosIzquierda();">izquierda</button>
     <button onclick="detenerObjetos();">detener</button>
     <button onclick="cambiarColor();">cambiar color</button>
-    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script>
-    <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script>
-    <script src="./node_modules/three/examples/js/controls/OrbitControls.js"></script>
-
-    <script src="./teatro.js" type="module"></script>
+ <!--    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script> -->
+<!--     <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script> -->
+<!--     <script src="./node_modules/three/examples/js/controls/OrbitControls.js"></script> -->
+<!-- 
+    <script src="./teatro.js" type="module"></script> -->
+    <script type="module">
+      import * as THREE from './node_modules/three/build/three.module.js';
+      import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+      
+      const scene = new THREE.Scene();
+      const gltfLoader = new GLTFLoader();
+      
+      </script>
   </body>
 </html>

@@ -1,5 +1,6 @@
-import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.131.3/examples/jsm/loaders/GLTFLoader.js'
-
+import * as THREE from "three";/* 
+import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.131.3/examples/jsm/loaders/GLTFLoader.js';
+ */
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
 ////////////
@@ -203,14 +204,14 @@ function cambiarColor() {
   }
 }
 
-const gltfLoader = new GLTFLoader();
+/* const gltfLoader = new GLTFLoader();
 gltfLoader.load(
   "https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf",
   (gltf) => {
     const root = gltf.scene;
     escena.add(root);
   }
-);
+); */
 
 const animate = function () {
   requestAnimationFrame(animate);
