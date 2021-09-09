@@ -10,22 +10,28 @@
     </style>
   </head>
   <body>
-    <button onclick="girarObjetosDerecha();">derecha</button>
-    <button onclick="girarObjetosIzquierda();">izquierda</button>
-    <button onclick="detenerObjetos();">detener</button>
-    <button onclick="cambiarColor();">cambiar color</button>
+    <button ID="btnDerecha">derecha</button>
+    <button id="btnIzquierda">izquierda</button>
+    <button id="btnDetener">detener</button>
+    <button id="btnColor">cambiar color</button>
  <!--    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script> -->
-<!--     <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script> -->
+    <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script>
 <!--     <script src="./node_modules/three/examples/js/controls/OrbitControls.js"></script> -->
-<!-- 
-    <script src="./teatro.js" type="module"></script> -->
+
+    <script src="./teatro.js" type="module"></script>
     <script type="module">
-      import * as THREE from './node_modules/three/build/three.module.js';
-      import { GLTFLoader } from './node_modules/three/examples/jsm/loaders/GLTFLoader.js';
+    import { girarObjetosDerecha } from './teatro.js';
+    import { girarObjetosIzquierda } from './teatro.js';
+    import { detenerObjetos} from './teatro.js';
+    import { cambiarColor } from './teatro.js';
+
+
+      document.getElementById('btnDerecha').addEventListener('click', girarObjetosDerecha);
       
-      const scene = new THREE.Scene();
-      const gltfLoader = new GLTFLoader();
+      document.getElementById('btnIzquierda').addEventListener('click',girarObjetosIzquierda);
       
-      </script>
+      document.getElementById('btnDetener').addEventListener('click',detenerObjetos);
+      
+      document.getElementById('btnColor').addEventListener('click',cambiarColor);</script>
   </body>
 </html>

@@ -1,6 +1,7 @@
-import * as THREE from "three";/* 
-import {GLTFLoader} from 'https://cdn.jsdelivr.net/npm/three@0.131.3/examples/jsm/loaders/GLTFLoader.js';
- */
+import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js';
+import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/controls/OrbitControls.js';
+import {OBJLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/loaders/OBJLoader.js';
+
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
 ////////////
@@ -180,7 +181,7 @@ function detenerObjetos() {
   rotacionObjetos = "detener";
 }
 
-var controls = new THREE.OrbitControls(camara, renderer.domElement);
+var controls = new OrbitControls(camara, renderer.domElement);
 
 var cambioTextura = false;
 
@@ -203,7 +204,25 @@ function cambiarColor() {
     cambiarColorAzul = true;
   }
 }
-
+const objLoader = new OBJLoader()
+objLoader.load(
+    'mono.obj',
+    (object) => {
+        // (object.children[0] as THREE.Mesh).material = material
+        // object.traverse(function (child) {
+        //     if ((child as THREE.Mesh).isMesh) {
+        //         (child as THREE.Mesh).material = material
+        //     }
+        // })
+        escena.add(object)
+    },
+    (xhr) => {
+        console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
+    },
+    (error) => {
+        console.log(error)
+    }
+)
 /* const gltfLoader = new GLTFLoader();
 gltfLoader.load(
   "https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf",
@@ -235,3 +254,7 @@ const animate = function () {
 };
 
 animate();
+export { girarObjetosDerecha };
+export {girarObjetosIzquierda };
+export { detenerObjetos };
+export { cambiarColor };
