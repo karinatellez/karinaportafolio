@@ -10,28 +10,39 @@
     </style>
   </head>
   <body>
-    <button ID="btnDerecha">derecha</button>
+    <button id="btnDerecha">derecha</button>
     <button id="btnIzquierda">izquierda</button>
     <button id="btnDetener">detener</button>
     <button id="btnColor">cambiar color</button>
- <!--    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script> -->
+    <!--    <script src="https://cdn.jsdelivr.net/npm/three@0.131.3/build/three.min.js"></script> -->
     <script src="./node_modules/dat.gui/build/dat.gui.min.js"></script>
-<!--     <script src="./node_modules/three/examples/js/controls/OrbitControls.js"></script> -->
+    <!--     <script src="./node_modules/three/examples/js/controls/OrbitControls.js"></script> -->
 
     <script src="./teatro.js" type="module"></script>
     <script type="module">
-    import { girarObjetosDerecha } from './teatro.js';
-    import { girarObjetosIzquierda } from './teatro.js';
-    import { detenerObjetos} from './teatro.js';
-    import { cambiarColor } from './teatro.js';
+      import { girarObjetosDerecha } from "./teatro.js";
+      import { girarObjetosIzquierda } from "./teatro.js";
+      import { detenerObjetos } from "./teatro.js";
+      import { cambiarColor } from "./teatro.js";
 
+      document
+        .getElementById("btnDerecha")
+        .addEventListener("click", girarObjetosDerecha);
 
-      document.getElementById('btnDerecha').addEventListener('click', girarObjetosDerecha);
-      
-      document.getElementById('btnIzquierda').addEventListener('click',girarObjetosIzquierda);
-      
-      document.getElementById('btnDetener').addEventListener('click',detenerObjetos);
-      
-      document.getElementById('btnColor').addEventListener('click',cambiarColor);</script>
+      document
+        .getElementById("btnIzquierda")
+        .addEventListener("click", girarObjetosIzquierda);
+
+      document
+        .getElementById("btnDetener")
+        .addEventListener("click", detenerObjetos);
+
+      document
+        .getElementById("btnColor")
+        .addEventListener("click", cambiarColor);
+    </script>
+    <script>
+
+    </script>
   </body>
 </html>

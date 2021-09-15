@@ -232,6 +232,17 @@ gltfLoader.load(
   }
 ); */
 
+var direccion=0;
+
+document.addEventListener('keydown', logKey);
+document.addEventListener('keyup', logKey);
+function logKey(e) {
+direccion=e.code;
+  return e.code;
+}
+
+
+
 const animate = function () {
   requestAnimationFrame(animate);
 
@@ -248,10 +259,21 @@ const animate = function () {
     cambioTextura = false;
   }
 
+if (direccion=="ArrowUp"){
+/* objLoader.position.x+=objLoader.position.x+0.1; */
+
+}
+  
   /*   objeto.rotation.x += 0.01; */
   /*   objeto.rotation.y += 0.01; */
   renderer.render(escena, camara);
 };
+
+function moverMono(event){
+var tecla= event.wich|| event.keyCode;
+console.log(tecla);
+}
+
 
 animate();
 export { girarObjetosDerecha };
