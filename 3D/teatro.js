@@ -1,6 +1,6 @@
-import * as THREE from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js';
-import {OrbitControls} from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/controls/OrbitControls.js';
-import {OBJLoader} from 'https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/loaders/OBJLoader.js';
+import * as THREE from "https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js";
+import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/controls/OrbitControls.js";
+import { OBJLoader } from "https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/loaders/OBJLoader.js";
 
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
@@ -21,7 +21,7 @@ var VIEW_ANGLE = 45,
 var camara = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
 // the camera defaults to position (0,0,0)
 //     so pull it back (z = 400) and up (y = 100) and set the angle towards the scene origin
-camara.position.set(0, 150, 400);
+camara.position.set(0, 150, -400);
 camara.lookAt(escena.position);
 
 const renderer = new THREE.WebGLRenderer();
@@ -204,25 +204,29 @@ function cambiarColor() {
     cambiarColorAzul = true;
   }
 }
-const objLoader = new OBJLoader()
+var elMono;
+
+const objLoader = new OBJLoader();
 objLoader.load(
-    'mono.obj',
-    (object) => {
-        // (object.children[0] as THREE.Mesh).material = material
-        // object.traverse(function (child) {
-        //     if ((child as THREE.Mesh).isMesh) {
-        //         (child as THREE.Mesh).material = material
-        //     }
-        // })
-        escena.add(object)
-    },
-    (xhr) => {
-        console.log((xhr.loaded / xhr.total) * 100 + '% loaded')
-    },
-    (error) => {
-        console.log(error)
-    }
-)
+  "mono.obj",
+  (objetoMono) => {
+    // (object.children[0] as THREE.Mesh).material = material
+    // object.traverse(function (child) {
+    //     if ((child as THREE.Mesh).isMesh) {
+    //         (child as THREE.Mesh).material = material
+    //     }
+    // })
+    objetoMono.name = "miMono";
+    elMono = objetoMono;
+    escena.add(elMono);
+  },
+  (xhr) => {
+    console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+  },
+  (error) => {
+    console.log(error);
+  }
+);
 /* const gltfLoader = new GLTFLoader();
 gltfLoader.load(
   "https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf",
@@ -232,16 +236,14 @@ gltfLoader.load(
   }
 ); */
 
-var direccion=0;
+var direccion = 0;
 
-document.addEventListener('keydown', logKey);
-document.addEventListener('keyup', logKey);
+document.addEventListener("keydown", logKey);
+document.addEventListener("keyup", logKey);
 function logKey(e) {
-direccion=e.code;
+  direccion = e.code;
   return e.code;
 }
-
-
 
 const animate = function () {
   requestAnimationFrame(animate);
@@ -259,24 +261,45 @@ const animate = function () {
     cambioTextura = false;
   }
 
-if (direccion=="ArrowUp"){
-/* objLoader.position.x+=objLoader.position.x+0.1; */
+  if (direccion == "ArrowUp") {
+    /* objLoader.position.x+=objLoader.position.x+0.1; */
+    elMono.position.y += 0.1;
+  }
 
-}
-  
+  if (direccion == "ArrowDown") {
+    /* objLoader.position.x+=objLoader.position.x+0.1; */
+    elMono.position.y -= 0.1;
+  }
+
+  if (direccion == "ArrowRight") {
+    /* objLoader.position.x+=objLoader.position.x+0.1; */
+    elMono.position.x += 0.1;
+  }
+
+  if (direccion == "ArrowLeft") {
+    /* objLoader.position.x+=objLoader.position.x+0.1; */
+    elMono.position.x -= 0.1;
+  }
+
+  if (direccion == "KeyE") {
+    /* objLoader.position.x+=objLoader.position.x+0.1; */
+  elMono.position.x=10;
+  elMono.position.Y=10;
+  elMono.position.z=10;
+  }
+
   /*   objeto.rotation.x += 0.01; */
   /*   objeto.rotation.y += 0.01; */
   renderer.render(escena, camara);
 };
 
-function moverMono(event){
-var tecla= event.wich|| event.keyCode;
-console.log(tecla);
+function moverMono(event) {
+  var tecla = event.wich || event.keyCode;
+  console.log(tecla);
 }
-
 
 animate();
 export { girarObjetosDerecha };
-export {girarObjetosIzquierda };
+export { girarObjetosIzquierda };
 export { detenerObjetos };
 export { cambiarColor };
