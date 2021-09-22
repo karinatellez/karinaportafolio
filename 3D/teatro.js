@@ -1,7 +1,7 @@
 import * as THREE from "https://threejsfundamentals.org/threejs/resources/threejs/r132/build/three.module.js";
 import { OrbitControls } from "https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/controls/OrbitControls.js";
 import { OBJLoader } from "https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/loaders/OBJLoader.js";
-
+import { MTLLoader } from "https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/loaders/MTLLoader.js";
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
 ////////////
@@ -72,7 +72,7 @@ carpetaPosition.add(objeto.position, "x", -4, 3);
 carpetaPosition.open();
 
 camara.position.z = -200;
-var luz = new THREE.PointLight(0xfc0303, 4, 2);
+var luz = new THREE.PointLight(0xfffaf2, 4, 2);
 
 luz.position.x = 0;
 luz.position.y = 0;
@@ -205,17 +205,20 @@ function cambiarColor() {
   }
 }
 var elMono;
-
+var ship_material = new THREE.MeshBasicMaterial({ color: 0x444444 });
+var mtlLoader = new MTLLoader();
+/* mtlLoader.setBaseUrl( 'obj/male02/' );
+mtlLoader.setPath( 'obj/male02/' ); */
+/* var url = "mono.mtl";
 const objLoader = new OBJLoader();
 objLoader.load(
   "mono.obj",
   (objetoMono) => {
-    // (object.children[0] as THREE.Mesh).material = material
-    // object.traverse(function (child) {
-    //     if ((child as THREE.Mesh).isMesh) {
-    //         (child as THREE.Mesh).material = material
-    //     }
-    // })
+    objetoMono.traverse( function( child ) {
+      if ( child instanceof THREE.Mesh ) {
+          child.material = mtlloader;
+      }
+  } );
     objetoMono.name = "miMono";
     elMono = objetoMono;
     escena.add(elMono);
@@ -226,7 +229,31 @@ objLoader.load(
   (error) => {
     console.log(error);
   }
-);
+); */
+new MTLLoader()
+/*   .setPath("models/obj/male02/") */
+  .load("mono.mtl", function (materials) {
+    materials.preload();
+
+    new OBJLoader()
+      .setMaterials(materials)
+/*       .setPath("models/obj/male02/") */
+      .load(
+        "mono.obj",
+        function (objetoMono) {
+/*           object.position.y = -95; */
+elMono = objetoMono;
+          escena.add(objetoMono);
+        },
+        (xhr) => {
+          console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+        },
+        (error) => {
+          console.log(error);
+        }
+      );
+  });
+
 /* const gltfLoader = new GLTFLoader();
 gltfLoader.load(
   "https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf",
@@ -248,6 +275,13 @@ function logKey(e) {
 const animate = function () {
   requestAnimationFrame(animate);
 
+  if (direccion == "KeyE") {
+    /* objLoader.position.x+=objLoader.position.x+0.1; */
+    elMono.position.x = 0;
+    elMono.position.y = 0;
+    elMono.position.z = 0;
+  }
+
   if (rotacionObjetos == "derecha") {
     cajita.rotation.y = cajita.rotation.y + 0.1;
     esfera.rotation.y = esfera.rotation.y + 0.1;
@@ -261,31 +295,36 @@ const animate = function () {
     cambioTextura = false;
   }
 
-  if (direccion == "ArrowUp") {
+  if (
+    (direccion == "ArrowUp" || direccion == "KeyW") &&
+    elMono.position.y <= 20
+  ) {
     /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.y += 0.1;
   }
 
-  if (direccion == "ArrowDown") {
+  if (
+    (direccion == "ArrowDown" || direccion == "KeyS") &&
+    elMono.position.y >=-20
+  ) {
     /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.y -= 0.1;
   }
 
-  if (direccion == "ArrowRight") {
+  if (
+    (direccion == "ArrowRight" || direccion == "KeyD") &&
+    elMono.position.x <= 20
+  ) {
     /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.x += 0.1;
   }
 
-  if (direccion == "ArrowLeft") {
+  if (
+    (direccion == "ArrowLeft" || direccion == "KeyA") &&
+    elMono.position.x >= -20
+  ) {
     /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.x -= 0.1;
-  }
-
-  if (direccion == "KeyE") {
-    /* objLoader.position.x+=objLoader.position.x+0.1; */
-  elMono.position.x=10;
-  elMono.position.Y=10;
-  elMono.position.z=10;
   }
 
   /*   objeto.rotation.x += 0.01; */
