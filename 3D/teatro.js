@@ -208,7 +208,7 @@ new MTLLoader().load("mono.mtl", function (materials) {
   );
 });
 
-var elRobot;
+/* var elRobot;
 
 new MTLLoader().load("RedRobot.mtl", function (materials) {
   materials.preload();
@@ -226,7 +226,7 @@ new MTLLoader().load("RedRobot.mtl", function (materials) {
       console.log(error);
     }
   );
-});
+}); */
 
 new MTLLoader().load("tv.mtl", function (materials) {
   materials.preload();
