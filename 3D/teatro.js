@@ -4,54 +4,26 @@ import { OBJLoader } from "https://threejsfundamentals.org/threejs/resources/thr
 import { MTLLoader } from "https://threejsfundamentals.org/threejs/resources/threejs/r132/examples/jsm/loaders/MTLLoader.js";
 var gui = new dat.GUI();
 const escena = new THREE.Scene();
-////////////
-// CAMERA //
-////////////
 
-// set the view size in pixels (custom or according to window size)
-// var SCREEN_WIDTH = 400, SCREEN_HEIGHT = 300;
 var SCREEN_WIDTH = window.innerWidth,
   SCREEN_HEIGHT = window.innerHeight;
-// camera attributes
+
 var VIEW_ANGLE = 45,
   ASPECT = SCREEN_WIDTH / SCREEN_HEIGHT,
   NEAR = 0.1,
   FAR = 20000;
-// set up camera
+
 var camara = new THREE.PerspectiveCamera(VIEW_ANGLE, ASPECT, NEAR, FAR);
-// the camera defaults to position (0,0,0)
-//     so pull it back (z = 400) and up (y = 100) and set the angle towards the scene origin
+
 camara.position.set(0, 150, -400);
 camara.lookAt(escena.position);
 
 const renderer = new THREE.WebGLRenderer();
 renderer.setSize(window.innerWidth, window.innerHeight);
 document.body.appendChild(renderer.domElement);
-/* CircleGeometry
-            ConeGeometry
-            CylinderGeometry
-            BoxGeometry
-            SphereGeometry
-            TorusGeometry */
-/* const x = 0, y = 0;
 
-const heartShape = new THREE.Shape();
-
-heartShape.moveTo( x + 5, y + 5 );
-heartShape.bezierCurveTo( x + 5, y + 5, x + 4, y, x, y );
-heartShape.bezierCurveTo( x - 6, y, x - 6, y + 7,x - 6, y + 7 );
-heartShape.bezierCurveTo( x - 6, y + 11, x - 3, y + 15.4, x + 5, y + 19 );
-heartShape.bezierCurveTo( x + 12, y + 15.4, x + 16, y + 11, x + 16, y + 7 );
-heartShape.bezierCurveTo( x + 16, y + 7, x + 16, y, x + 10, y );
-heartShape.bezierCurveTo( x + 7, y, x + 5, y + 5, x + 5, y + 5 );
- */
 const geometria = new THREE.CylinderGeometry();
 
-/*             MeshPhongMaterial
-            MeshBasicMaterial
-            MeshDepthMaterial
-            MeshNormalMaterial
-             */
 var loader = new THREE.TextureLoader();
 const material = new THREE.MeshBasicMaterial({
   map: loader.load(
@@ -72,15 +44,25 @@ carpetaPosition.add(objeto.position, "x", -4, 3);
 carpetaPosition.open();
 
 camara.position.z = -200;
-var luz = new THREE.PointLight(0xfffaf2, 4, 2);
+var luz = new THREE.PointLight(0xfffaf2, 1, 100, 2);
 
 luz.position.x = 0;
-luz.position.y = 0;
-luz.position.z = 0;
-
+luz.position.y = 5;
+luz.position.z = 6;
 escena.add(luz);
+var luzAmbiente = new THREE.AmbientLight(0x404040);
+
+escena.add(luzAmbiente);
+
+var luzTrasera = new THREE.PointLight(0xfffaf2, 1, 100, 2);
+
+luzTrasera.position.x = 0;
+luzTrasera.position.y = 0;
+luzTrasera.position.z = -6;
+escena.add(luzTrasera);
+
 var carpetaLuz = gui.addFolder("luces");
-carpetaLuz.add(luz.position, "y", -1, 5, 0.5);
+carpetaLuz.add(luz.position, "y", -1, 150, 0.5);
 carpetaLuz.add(luz.position, "x", -5, 4, 0.1);
 carpetaLuz.add(luz.position, "z", -2, 6, 1);
 var carpetaCamara = gui.addFolder("camara");
@@ -127,7 +109,7 @@ var piso = new THREE.Mesh(geometriaPiso, materialPiso);
 escena.add(piso);
 
 piso.rotation.x = Math.PI / 2;
-/* piso.rotation.y= -0.5; */
+
 
 var carpetaPiso = gui.addFolder("piso");
 carpetaPiso.add(piso.position, "y", -5, 5, 1);
@@ -207,61 +189,61 @@ function cambiarColor() {
 var elMono;
 var ship_material = new THREE.MeshBasicMaterial({ color: 0x444444 });
 var mtlLoader = new MTLLoader();
-/* mtlLoader.setBaseUrl( 'obj/male02/' );
-mtlLoader.setPath( 'obj/male02/' ); */
-/* var url = "mono.mtl";
-const objLoader = new OBJLoader();
-objLoader.load(
-  "mono.obj",
-  (objetoMono) => {
-    objetoMono.traverse( function( child ) {
-      if ( child instanceof THREE.Mesh ) {
-          child.material = mtlloader;
-      }
-  } );
-    objetoMono.name = "miMono";
-    elMono = objetoMono;
-    escena.add(elMono);
-  },
-  (xhr) => {
-    console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-  },
-  (error) => {
-    console.log(error);
-  }
-); */
-new MTLLoader()
-/*   .setPath("models/obj/male02/") */
-  .load("mono.mtl", function (materials) {
-    materials.preload();
 
-    new OBJLoader()
-      .setMaterials(materials)
-/*       .setPath("models/obj/male02/") */
-      .load(
-        "mono.obj",
-        function (objetoMono) {
-/*           object.position.y = -95; */
-elMono = objetoMono;
-          escena.add(objetoMono);
-        },
-        (xhr) => {
-          console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
-        },
-        (error) => {
-          console.log(error);
-        }
-      );
-  });
+new MTLLoader().load("mono.mtl", function (materials) {
+  materials.preload();
 
-/* const gltfLoader = new GLTFLoader();
-gltfLoader.load(
-  "https://threejsfundamentals.org/threejs/resources/models/cartoon_lowpoly_small_city_free_pack/scene.gltf",
-  (gltf) => {
-    const root = gltf.scene;
-    escena.add(root);
-  }
-); */
+  new OBJLoader().setMaterials(materials).load(
+    "mono.obj",
+    function (objetoMono) {
+      elMono = objetoMono;
+      escena.add(objetoMono);
+    },
+    (xhr) => {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+});
+
+var elRobot;
+
+new MTLLoader().load("RedRobot.mtl", function (materials) {
+  materials.preload();
+
+  new OBJLoader().setMaterials(materials).load(
+    "RedRobot.obj",
+    function (objetoRobot) {
+      elRobot = objetoRobot;
+      escena.add(objetoRobot);
+    },
+    (xhr) => {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+});
+
+new MTLLoader().load("tv.mtl", function (materials) {
+  materials.preload();
+
+  new OBJLoader().setMaterials(materials).load(
+    "tv.obj",
+    function (objetoTv) {
+      escena.add(objetoTv);
+    },
+    (xhr) => {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+});
 
 var direccion = 0;
 
@@ -276,7 +258,6 @@ const animate = function () {
   requestAnimationFrame(animate);
 
   if (direccion == "KeyE") {
-    /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.x = 0;
     elMono.position.y = 0;
     elMono.position.z = 0;
@@ -299,15 +280,13 @@ const animate = function () {
     (direccion == "ArrowUp" || direccion == "KeyW") &&
     elMono.position.y <= 20
   ) {
-    /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.y += 0.1;
   }
 
   if (
     (direccion == "ArrowDown" || direccion == "KeyS") &&
-    elMono.position.y >=-20
+    elMono.position.y >= -20
   ) {
-    /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.y -= 0.1;
   }
 
@@ -315,7 +294,6 @@ const animate = function () {
     (direccion == "ArrowRight" || direccion == "KeyD") &&
     elMono.position.x <= 20
   ) {
-    /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.x += 0.1;
   }
 
@@ -323,12 +301,9 @@ const animate = function () {
     (direccion == "ArrowLeft" || direccion == "KeyA") &&
     elMono.position.x >= -20
   ) {
-    /* objLoader.position.x+=objLoader.position.x+0.1; */
     elMono.position.x -= 0.1;
   }
 
-  /*   objeto.rotation.x += 0.01; */
-  /*   objeto.rotation.y += 0.01; */
   renderer.render(escena, camara);
 };
 
