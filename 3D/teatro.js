@@ -31,7 +31,6 @@ const material = new THREE.MeshBasicMaterial({
   ),
 });
 const objeto = new THREE.Mesh(geometria, material);
-escena.add(objeto);
 
 var carpetaEscala = gui.addFolder("escala");
 carpetaEscala.add(objeto.scale, "x", 1, 10, 0.1);
@@ -186,18 +185,20 @@ function cambiarColor() {
     cambiarColorAzul = true;
   }
 }
-var elMono;
+var laLola;
 var ship_material = new THREE.MeshBasicMaterial({ color: 0x444444 });
 var mtlLoader = new MTLLoader();
 
-new MTLLoader().load("mono.mtl", function (materials) {
+new MTLLoader().load("lola.mtl", function (materials) {
   materials.preload();
 
   new OBJLoader().setMaterials(materials).load(
-    "mono.obj",
-    function (objetoMono) {
-      elMono = objetoMono;
-      escena.add(objetoMono);
+    "lola.obj",
+    function (objetoLola) {
+      objetoLola.position.x=8;
+      laLola = objetoLola;
+      objetoLola.scale.set(3,3,3);
+      escena.add(objetoLola);
     },
     (xhr) => {
       console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
@@ -234,7 +235,28 @@ new MTLLoader().load("tv.mtl", function (materials) {
   new OBJLoader().setMaterials(materials).load(
     "tv.obj",
     function (objetoTv) {
+      objetoTv.position.y=3.5;
+      objetoTv.scale.set(5,5,5);
       escena.add(objetoTv);
+    },
+    (xhr) => {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+});
+ var laMesa; 
+new MTLLoader().load("mesa.mtl", function (materials) {
+  materials.preload();
+
+  new OBJLoader().setMaterials(materials).load(
+    "mesa.obj",
+    function (objetoMesa) {
+      laMesa = objetoMesa;
+      objetoMesa.scale.set(.005,.005,.005);
+      escena.add(objetoMesa);
     },
     (xhr) => {
       console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
@@ -247,6 +269,27 @@ new MTLLoader().load("tv.mtl", function (materials) {
 
 var direccion = 0;
 
+var laCasa; 
+new MTLLoader().load("./laCasa.obj/casa.obj.mtl", function (materials) {
+  materials.preload();
+
+  new OBJLoader().setMaterials(materials).load(
+    "./laCasa.obj/casa.obj.obj",
+    function (objetoLaCasa) {
+      objetoLaCasa.position.z=-30;
+      laCasa = objetoLaCasa;
+      objetoLaCasa.scale.set(2,2,2);
+      escena.add(objetoLaCasa);
+    },
+    (xhr) => {
+      console.log((xhr.loaded / xhr.total) * 100 + "% loaded");
+    },
+    (error) => {
+      console.log(error);
+    }
+  );
+});
+
 document.addEventListener("keydown", logKey);
 document.addEventListener("keyup", logKey);
 function logKey(e) {
@@ -258,9 +301,9 @@ const animate = function () {
   requestAnimationFrame(animate);
 
   if (direccion == "KeyE") {
-    elMono.position.x = 0;
-    elMono.position.y = 0;
-    elMono.position.z = 0;
+    laLola.position.x = 0;
+    laLola.position.y = 0;
+    laLola.position.z = 0;
   }
 
   if (rotacionObjetos == "derecha") {
@@ -278,30 +321,30 @@ const animate = function () {
 
   if (
     (direccion == "ArrowUp" || direccion == "KeyW") &&
-    elMono.position.y <= 20
+    laLola.position.z <= 20
   ) {
-    elMono.position.y += 0.1;
+    laLola.position.z += 0.1;
   }
 
   if (
     (direccion == "ArrowDown" || direccion == "KeyS") &&
-    elMono.position.y >= -20
+    laLola.position.z >= -20
   ) {
-    elMono.position.y -= 0.1;
+    laLola.position.z -= 0.1;
   }
 
   if (
     (direccion == "ArrowRight" || direccion == "KeyD") &&
-    elMono.position.x <= 20
+    laLola.position.x <= 20
   ) {
-    elMono.position.x += 0.1;
+    laLola.position.x += 0.1;
   }
 
   if (
     (direccion == "ArrowLeft" || direccion == "KeyA") &&
-    elMono.position.x >= -20
+    laLola.position.x >= -20
   ) {
-    elMono.position.x -= 0.1;
+    laLola.position.x -= 0.1;
   }
 
   renderer.render(escena, camara);
