@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+
+    <title>calculadora</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./calculdora.js"></script>
+  </head>
+  <body>
+    <h1>calculadora</h1>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-5"></div>
+        <div class="col-2 carcaza">
+          <div class="calculadora row">
+            <div class="pantalla col-12 " id="pantalla">pantalla</div>
+          </div>
+          <div class="numeros row">
+            <div class="boton col-3" onclick="mostrarNumero(7);">7</div>
+            <div class="boton col-3" onclick="mostrarNumero(8);">8</div>
+            <div class="boton col-3" onclick="mostrarNumero(9);">9</div>
+            <div class="boton col-3" >/</div>
+            <div class="boton col-3" onclick="mostrarNumero(4);">4</div>
+            <div class="boton col-3" onclick="mostrarNumero(5);">5</div>
+            <div class="boton col-3" onclick="mostrarNumero(6);">6</div>
+            <div class="boton col-3">-</div>
+            <div class="boton col-3" onclick="mostrarNumero(1);">1</div>
+            <div class="boton col-3" onclick="mostrarNumero(2);">2</div>
+            <div class="boton col-3" onclick="mostrarNumero(3);">3</div>
+            <div class="boton col-3">+</div>
+            <div class="boton col-3">.</div>
+            <div class="boton col-3" onclick="mostrarNumero(0);">0</div>
+            <div class="boton col-3">=</div>
+            <div class="boton col-3">x</div>
+          </div>
+        </div>
+        <div class="col-5"></div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js" integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
