@@ -19,6 +19,7 @@
     border-radius: 20px;
     margin: 10px;
     background:rgb(214, 202, 214);
+    font-family: 'LED Digital 7', sans-serif;
 }
 
 .boton{
@@ -28,6 +29,7 @@
     height:30px;
     background-color: black;
     color: antiquewhite;
+
 }
 .boton:hover{
     color: hotpink;
