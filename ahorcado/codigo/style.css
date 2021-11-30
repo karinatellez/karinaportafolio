@@ -1,0 +1,39 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+
+h1{
+    margin: 5%;
+    font-size: 50px;
+    font-family: 'Phosphorus Bromide', sans-serif;
+    color: rgb(39, 48, 66);
+    text-align: center;
+}
+.images{
+    text-align: center;
+    background-color: rgb(232, 239, 241);
+    width:100%;
+    height:100%;
+}
+
+#inputPassword{
+
+    text-align: center;
+    border: solid 1px #006c74;
+}
+
+.barra{
+    background-color:rgb(232, 239, 241);
+}
+
+button{
+    text-align: center;
+}
+
+.palabraconguiones{
+    font-family: 'EDITORS', sans-serif;
+    font-size: 50px ;
+    text-align: center;
+}
